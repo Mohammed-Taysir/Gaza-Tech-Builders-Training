@@ -6,6 +6,7 @@ import Framework from "./pages/Framework";
 import MainLayout from "./layout/MainLayout";
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
+import ProtectedRouter from "./protected/ProtectedRouter";
 
 
 export const router = createBrowserRouter([
@@ -15,19 +16,27 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <ProtectedRouter>
+          <Home />
+        </ProtectedRouter>
       },
       {
         path: '/tips',
-        element: <Tips />
+        element: <ProtectedRouter>
+          <Tips />
+        </ProtectedRouter>
       },
       {
         path: '/basics',
-        element: <Basics />
+        element: <ProtectedRouter>
+          <Basics />
+        </ProtectedRouter>
       },
       {
         path: '/framework',
-        element: <Framework />
+        element: <ProtectedRouter>
+          <Framework />
+        </ProtectedRouter>
       },
       {
         path: '/signin',
