@@ -22,7 +22,10 @@ function Header() {
     setIsDark((isDark) => !isDark);
   };
   return (
-    <header className={`header ${theme}`}>
+    <header className={`header ${theme}`} style = {{
+      display: 'flex',
+      alignItems: "center"
+    }}>
       <Link to="/">
         <h1>Web Dev Roadmap</h1>
       </Link>
